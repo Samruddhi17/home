@@ -2,8 +2,11 @@ baseURL = "https://samruddhi17.github.io/home/"
 languageCode = "en-us"
 title = "Samruddhi"
 theme = "minimal"
-disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = ""
+[services]
+  [services.googleAnalytics]
+    ID = ""
+  [services.disqus]
+    shortname = "username"
 
 [params]
     author = "Samruddhi Naik"
