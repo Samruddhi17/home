@@ -1,6 +1,6 @@
 baseURL = "https://samruddhi17.github.io/home/"
 languageCode = "en-us"
-title = "Samruddhi"
+title = "Samruddhi Naik"
 theme = "minimal"
 [services]
   [services.googleAnalytics]
