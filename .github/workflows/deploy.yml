@@ -8,12 +8,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout hugo-home repo
+      - name: Checkout source
         uses: actions/checkout@v4
         with:
-          submodules: true  # Fetch Hugo themes
+          submodules: true
           fetch-depth: 0
 
       - name: Setup Hugo
@@ -25,11 +27,9 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify
 
-      - name: Deploy to Samruddhi17/home
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          external_repository: Samruddhi17/home
-          publish_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          commit_message: ${{ github.event.head_commit.message }}
+          publish_branch: gh-pages
