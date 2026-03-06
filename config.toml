@@ -21,6 +21,7 @@ theme = "minimal"
     highlightStyle = "default"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
     profilePic = "images/sam.png"
+    googleAnalyticsID = ""
 
 [[menu.main]]
     url = "/"
